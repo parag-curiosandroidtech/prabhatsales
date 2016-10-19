@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "726431887370",
+    "firebase_url": "https://sample-97e79.firebaseio.com",
+    "project_id": "sample-97e79",
+    "storage_bucket": "sample-97e79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726431887370:android:aa0bbad8948761a8",
+        "android_client_info": {
+          "package_name": "com.prabhatenterprises.salesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726431887370-sjq66pfgjk8mjb8ot09l6rvm771nsqb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh29NgzpDtwvbblcnVMwzn5riWlARGulE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
