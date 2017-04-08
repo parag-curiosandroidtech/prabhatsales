@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    //attemptLogin();
                     return true;
                 }
                 return false;
@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
-        if (mAuth != null) {
+        if (mAuth == null) {
             return;
         }
 
@@ -236,9 +236,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
+                        showProgress(false);
                         if (!task.isSuccessful()) {
                             Log.w("", "signInWithEmail:failed", task.getException());
                             Toast.makeText(LoginActivity.this, "Auth Failed",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Auth Success",
                                     Toast.LENGTH_SHORT).show();
                         }
 
