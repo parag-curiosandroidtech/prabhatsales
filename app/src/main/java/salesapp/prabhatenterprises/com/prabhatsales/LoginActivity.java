@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 
 import java.util.ArrayList;
@@ -76,6 +77,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user!= null) {
+            Intent myIntent = new Intent(LoginActivity.this,
+                    MainActivity.class);
+            startActivity(myIntent);
+        }
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -244,8 +253,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         } else {
                             Toast.makeText(LoginActivity.this, "Auth Success",
                                     Toast.LENGTH_SHORT).show();
+                            Intent myIntent = new Intent(LoginActivity.this,
+                                    MainActivity.class);
+                            startActivity(myIntent);
                         }
-
                         // ...
                     }
                 });
